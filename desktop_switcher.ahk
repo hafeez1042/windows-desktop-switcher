@@ -76,7 +76,7 @@ getSessionId()
 switchDesktopByNumber(targetDesktop)
 {
     global CurrentDesktop, DesktopCount
-    
+
     ; There are three issues with switching desktops with active windows in intermediary desktops:
     ; 1. Occasionally, not all "go right" or "go left" hotkeys are resulting in a switched desktop, this results in switcher getting stuck midway (not at the destination desktop, while at the end CurrentDesktop gets itself set to the target desktop number)
     ; 2. Switching is not instantaneous anymore, this introduces rapid flashing (each desktop shows itself for a brief moment)
@@ -140,23 +140,23 @@ OutputDebug, [loading] desktops: %DesktopCount% current: %CurrentDesktop%
 
 ; User config!
 ; This section binds the key combo to the switch/create/delete actions
-CapsLock & 1::switchDesktopByNumber(1)
-CapsLock & 2::switchDesktopByNumber(2)
-CapsLock & 3::switchDesktopByNumber(3)
-CapsLock & 4::switchDesktopByNumber(4)
-CapsLock & 5::switchDesktopByNumber(5)
-CapsLock & 6::switchDesktopByNumber(6)
-CapsLock & 7::switchDesktopByNumber(7)
-CapsLock & 8::switchDesktopByNumber(8)
-CapsLock & 9::switchDesktopByNumber(9)
-CapsLock & n::switchDesktopByNumber(CurrentDesktop + 1)
-CapsLock & p::switchDesktopByNumber(CurrentDesktop - 1)
-CapsLock & s::switchDesktopByNumber(CurrentDesktop + 1)
-CapsLock & a::switchDesktopByNumber(CurrentDesktop - 1)
-CapsLock & c::createVirtualDesktop()
-CapsLock & d::deleteVirtualDesktop()
+LAlt & 1::switchDesktopByNumber(1)
+LAlt & 2::switchDesktopByNumber(2)
+LAlt & 3::switchDesktopByNumber(3)
+LAlt & 4::switchDesktopByNumber(4)
+LAlt & 5::switchDesktopByNumber(5)
+LAlt & 6::switchDesktopByNumber(6)
+LAlt & 7::switchDesktopByNumber(7)
+LAlt & 8::switchDesktopByNumber(8)
+LAlt & 9::switchDesktopByNumber(9)
+LAlt & n::switchDesktopByNumber(CurrentDesktop + 1)
+LAlt & p::switchDesktopByNumber(CurrentDesktop - 1)
+LAlt & s::switchDesktopByNumber(CurrentDesktop + 1)
+LAlt & a::switchDesktopByNumber(CurrentDesktop - 1)
+LAlt & c::createVirtualDesktop()
+LAlt & d::deleteVirtualDesktop()
 
-; Alternate keys for this config. Adding these because DragonFly (python) doesn't send CapsLock correctly.
+; Alternate keys for this config. Adding these because DragonFly (python) doesn't send LAlt correctly.
 ^!1::switchDesktopByNumber(1)
 ^!2::switchDesktopByNumber(2)
 ^!3::switchDesktopByNumber(3)
